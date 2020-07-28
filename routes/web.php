@@ -53,6 +53,8 @@ Route::group(['middleware' => ['auth']], function () {
             Route::get('/fetchCourses','Dashboard\CourseController@fetchCourses')->name('course.fetchCourses');
             Route::get('/courseEvaluations/{courseId}/{type}','Dashboard\CourseController@courseEvaluations')->name('course.courseEvaluations');
             Route::get('/fetchCoursesEvaluation/{courseId}/{type}','Dashboard\CourseController@fetchCoursesEvaluation')->name('course.fetchCoursesEvaluations');
+            Route::get('/courseEvaluationsResults/{courseId}/{type}','Dashboard\CourseController@courseEvaluationsResults')->name('course.courseEvaluations');
+            Route::get('/fetchCoursesEvaluationResults/{courseId}/{type}','Dashboard\CourseController@fetchCoursesEvaluationResults')->name('course.fetchCoursesEvaluationResults');
 
             Route::group(['middleware' => ['admin.permission']], function () {
                 Route::get('/edit/{id}','Dashboard\CourseController@editForm')->name('course.editForm');

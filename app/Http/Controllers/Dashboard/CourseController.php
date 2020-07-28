@@ -90,8 +90,37 @@ class CourseController extends Controller
             ->addColumn('avg', function ($evaluation) {
                 return number_format($evaluation->avg,2).'%';
             })
+            ->addColumn('action', function ($evaluation) use($courseId,$type) {
+                return '<a class="btn action-btn btn-info" href=\'/courses/courseEvaluationsResults/'.$courseId.'/'.$type.'\'><span class="fa fa-pencil"></span></a>';
+            })
+            ->rawColumns(['action'])
             ->make(true);
     }
+
+    // return student view
+    public function courseEvaluationsResults($courseId,$type){
+        return view('dashboard.courses.course-evaluations-results',compact('courseId','type'));
+    }
+
+    // fetch course evaluations
+    public function fetchCoursesEvaluationResults($courseId,$type)
+    {
+        $evaluations = CourseEvaluation::where('course_id',$courseId)->where('type',$type)
+                                        ->where('value','>=',0)
+                                        ->orderByDesc('created_at')
+                                        ->whereNotIn('option',['type','course_id','doc','doctor_id'])
+                                        ->get();
+
+        return DataTables::of($evaluations)
+            ->addColumn('option', function ($evaluation) {
+                return $evaluation->option;
+            })
+            ->addColumn('value', function ($evaluation) {
+                return $evaluation->value;
+            })
+            ->make(true);
+    }
+
 
     // return edit view
     public function editForm($id){

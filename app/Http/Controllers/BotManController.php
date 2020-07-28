@@ -28,8 +28,9 @@ class BotManController extends Controller
             }else{
                 Session::put('question_number',0);
             }
-
-            $this->askName($botman);
+            if(in_array(strtolower($message),["yes","hi"])){
+                $this->askName($botman);
+            }
 
         });
 
@@ -44,7 +45,9 @@ class BotManController extends Controller
         $botman->ask(Questions::questions[Session::get('question_number')].'.... please reply with yes or no', function(Answer $answer) {
 
             $answer = $answer->getText();
-            $this->say(Questions::answers[Session::get('question_number')].'... Do you want another question ?');
+            if(in_array($answer,['yes','YES','Yes'])){
+                $this->say(Questions::answers[Session::get('question_number')].'... Do you want another question ?');
+            }
         });
     }
 }

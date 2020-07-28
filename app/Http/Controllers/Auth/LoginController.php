@@ -49,6 +49,6 @@ class LoginController extends Controller
             return $this->redirectTo();
         }
 
-        return property_exists($this, 'redirectTo') && in_array(Auth::user()->role,['admin','subAdmin']) ? $this->redirectTo : '/';
+        return property_exists($this, 'redirectTo') && in_array(Auth::user()->role,['admin','subAdmin']) ? $this->redirectTo : '/profile';
     }
 }

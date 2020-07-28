@@ -67,19 +67,19 @@
                                     @if($course->doctor_id == auth()->id())
 
                                         <li class="active">
-                                            <a href="/course/evaluation/{{$course->id}}" target="blank">
+                                            <a href="/course/evaluation/{{$course->id}}/1" target="blank">
                                                 <i class=" wmicon-pen"></i>
                                                 Doc1
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="curriculum.html" target="blank">
+                                            <a href="/course/evaluation/{{$course->id}}/2" target="blank">
                                                 <i class=" wmicon-pen"></i>
                                                 Doc2
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="general-info.html" target="blank">
+                                            <a href="/course/evaluation/{{$course->id}}/3" target="blank">
                                                 <i class=" wmicon-pen"></i>
                                                 Doc3
                                             </a>

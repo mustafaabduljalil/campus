@@ -25,9 +25,8 @@
                             <table id="courses-evaluation" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
-                                    <th>رقم التقييم</th>
-                                    <th>النسبة</th>
-                                    <th>العمليات</th>
+                                    <th>السوال</th>
+                                    <th>الاجابة</th>
                                 </tr>
                                 </thead>
                             </table>
@@ -84,13 +83,12 @@
             ],
             select: true,
             ajax: {
-                "url": '/courses/fetchCoursesEvaluation/{{$courseId}}/{{$type}}',
+                "url": '/courses/fetchCoursesEvaluationResults/{{$courseId}}/{{$type}}',
                 "type": 'GET'
             },
             columns: [
-                {data: 'number', name: 'number'},
-                {data: 'avg', name: 'avg'},
-                {data: 'action', name: 'action'},
+                {data: 'option', name: 'option'},
+                {data: 'value', name: 'value'},
             ],
             "oLanguage": {
                 "sSearch": "بحث : "
