@@ -44,7 +44,7 @@
                             @forelse($user->courses as $course)
                                 <li class="col-md-4">
                                     <div class="wm-courses-popular-wrap">
-                                        <figure> <a href="/course/{{$course->id}}"><img src="{{isset($course->doctor->image) ? $course->doctor->image : 'extra-images/papular-courses-1.jpg'}}" alt=""> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
+                                        <figure> <a href="/course/{{$course->id}}"><img src="{{isset($course->image) ? $course->image : 'extra-images/papular-courses-1.jpg'}}" alt="" style="height: 250px"> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
                                             <figcaption>
                                                 <img src="{{isset($course->doctor->image) ? $course->doctor->image : 'extra-images/papular-courses-thumb-1.jpg'}}" style="max-width: 65px;" alt="">
                                                 <h6><a href="/course/{{$course->id}}">{{$course->doctor->name}}</a></h6>

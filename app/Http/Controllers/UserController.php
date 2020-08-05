@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\CourseEvaluationQuestion;
 use App\DoctorEvaluationQuestion;
+use App\StudentEvaluationCourse;
 use App\StudentEvaluationDoctor;
 use App\User;
 use App\UserCourse;
@@ -58,4 +60,37 @@ class UserController extends Controller
         return redirect()->back();
 
     }
+
+
+    // return evaluation view
+    public function courseEvaluation($id){
+        if(\auth()->user()->role == "doctor")
+            abort(403);
+        $course = Course::find($id);
+        $questions = CourseEvaluationQuestion::all();
+        $checkUserEvaluatedBefore = StudentEvaluationCourse::where('student_id',\auth()->id())
+            ->where('course_id',$course->id)->first();
+        if(!is_null($checkUserEvaluatedBefore))
+            $questions = [];
+        return view('course-evaluation',compact('questions','course'));
+
+    }
+
+    // store doctor evaluation
+    public function storeCourseEvaluation(Request $request){
+        foreach ($request->questions as $key => $question){
+            $answer = 'answers_'.$key;
+            StudentEvaluationCourse::create([
+                'course_id' => $request->course_id,
+                'student_id' => \auth()->id(),
+                'question_id' => $question,
+                'rate' => $request->$answer,
+            ]);
+        }
+
+        \Session::flash('success', 'Submitted successfully, thanks for your time');
+        return redirect()->back();
+
+    }
+
 }

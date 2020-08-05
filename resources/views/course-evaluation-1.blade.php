@@ -73,7 +73,7 @@
                             </select>
                         </div>
                     </div>
-
+                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                 </div>
                 <!-- #tab2 -->
 
@@ -171,7 +171,7 @@
                         </div>
                     </div>
 
-
+                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                 </div>
                 <!-- #tab3 -->
                 <div id="tab4" class="tab_content">
@@ -266,7 +266,7 @@
                         </div>
                     </div>
 
-
+                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                 </div>
                 <!-- #tab4 -->
             </div>
@@ -371,7 +371,7 @@
                                 </div>
                             </div>
 
-
+                            <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
 
                         </div>
                         <div class="tab-pane" id="profile-v">
@@ -451,7 +451,7 @@
                                 </div>
                             </div>
 
-
+                            <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
 
 
                         </div>
@@ -534,7 +534,7 @@
                                     </select>
                                 </div>
                             </div>
-
+                            <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                         </div>
                         <div class="tab-pane" id="settings-v">
 
@@ -888,7 +888,7 @@
                             </div>
 
                         </div>
-
+                        <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
 
                     </div>
                     <div id="tab-two-panel" class="panel">
@@ -1236,7 +1236,7 @@
                             </div>
 
                         </div>
-
+                        <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                     </div>
                     <div id="operations" class="tabContent">
                         <div class="brand-color">
@@ -1305,7 +1305,7 @@
                                             <option>30</option>
                                         </select>
                                     </div>
-
+                                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                                 </div>
                                 <div class="row ro-op">
 
@@ -1437,7 +1437,7 @@
                                             <option>30</option>
                                         </select>
                                     </div>
-
+                                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                                 </div>
                                 <div class="row ro-op">
 
@@ -1580,7 +1580,7 @@
                                 </div>
                             </div>
 
-
+                            <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                         </div>
 
                     </div>
@@ -1647,7 +1647,7 @@
                                 </div>
                             </div>
 
-
+                            <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                         </div>
 
                     </div>
@@ -1657,7 +1657,7 @@
 
                             <textarea  id="story" name="story" rows="5" cols="33" >   </textarea>
                         </div>
-
+                        <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                     </div>
                     <div id="eight" class="tabContent">
                         <div class="brand-color">
@@ -1670,7 +1670,7 @@
 
 
                         </div>
-
+                        <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
                     </div>
                 </div>
             </div>

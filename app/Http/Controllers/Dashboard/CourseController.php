@@ -108,7 +108,8 @@ class CourseController extends Controller
         $evaluations = CourseEvaluation::where('course_id',$courseId)->where('type',$type)
                                         ->where('value','>=',0)
                                         ->orderByDesc('created_at')
-                                        ->whereNotIn('option',['type','course_id','doc','doctor_id'])
+                                        ->whereNotIn('option',['type','course_id','doc','doctor_id
+                                        '])
                                         ->get();
 
         return DataTables::of($evaluations)

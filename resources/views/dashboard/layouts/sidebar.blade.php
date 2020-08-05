@@ -46,6 +46,12 @@
                         <span class="pull-right-container"></span>
                     </a>
                 </li>
+            <li>
+                <a href="{{route('course.question.index')}}">
+                    <i class="fa fa-pencil"></i><span>اسئلة تقييم الكورس</span>
+                    <span class="pull-right-container"></span>
+                </a>
+            </li>
                 <li>
                     <a href="{{route('course.index')}}">
                         <i class="fa fa-pencil"></i> <span>الكورسات</span>

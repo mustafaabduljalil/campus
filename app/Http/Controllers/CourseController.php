@@ -13,7 +13,9 @@ class CourseController extends Controller
     //
     public function details($id){
         $course = Course::find($id);
-        $course->viewers = $course->viewers +1;
+        if(is_null($course))
+            abort(404);
+        $course->viewers = isset($course->viewers) && !is_null($course->viewers) ? $course->viewers +1 : 1;
         $course->update();
         $relatedCourses = Course::with('doctor')->where('id','!=',$id)->where('doctor_id',$course->doctor_id)->get();
         $doc1 = CourseEvaluation::where('course_id',$id)->where('type','doc1')->first();

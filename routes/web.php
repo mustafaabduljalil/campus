@@ -64,7 +64,6 @@ Route::group(['middleware' => ['auth']], function () {
                 Route::post('/store_adding','Dashboard\CourseController@storeAdding')->name('course.storeAdding');
             });
         });
-
         // Doctors Evaluation questions
         Route::group(['prefix' => 'question'], function() {
             Route::get('/','Dashboard\EvaluationQuestionController@index')->name('doctor.question.index');
@@ -78,6 +77,20 @@ Route::group(['middleware' => ['auth']], function () {
                 Route::post('/store_adding','Dashboard\EvaluationQuestionController@storeAdding')->name('doctor.question.storeAdding');
             });
         });
+        // Courses Evaluation questions
+        Route::group(['prefix' => '/courses/question'], function() {
+            Route::get('/','Dashboard\CourseEvaluationQuestionController@index')->name('course.question.index');
+            Route::get('/fetchQuestions','Dashboard\CourseEvaluationQuestionController@fetchQuestions')->name('course.question.fetchQuestions');
+
+            Route::group(['middleware' => ['admin.permission']], function () {
+                Route::get('/edit/{id}','Dashboard\CourseEvaluationQuestionController@editForm')->name('course.question.editForm');
+                Route::post('/store_edit','Dashboard\CourseEvaluationQuestionController@storeEdit')->name('course.question.storeEdit');
+                Route::post('/delete','Dashboard\CourseEvaluationQuestionController@delete')->name('course.question.delete');
+                Route::get('/add_new_question','Dashboard\CourseEvaluationQuestionController@addForm')->name('course.question.addForm');
+                Route::post('/store_adding','Dashboard\CourseEvaluationQuestionController@storeAdding')->name('course.question.storeAdding');
+            });
+        });
+
 
 
     });
@@ -85,6 +98,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::get('/doctor/evaluation/{id}', 'UserController@evaluation')->name('doctor.evaluation');
     Route::post('/store/evaluation', 'UserController@storeEvaluation')->name('doctor.evaluation.store');
+
+    Route::get('/course/evaluation/question/{id}', 'UserController@courseEvaluation')->name('course.evaluation.question');
+    Route::post('/course/evaluation/question', 'UserController@storeCourseEvaluation')->name('course.evaluation.question');
+
     Route::get('/course/evaluation/{id}/{number}', 'CourseController@courseEvaluation')->name('course.courseEvaluation.one');
     Route::post('/course/evaluation', 'CourseController@storeEvaluation')->name('course.evaluation.store');
 

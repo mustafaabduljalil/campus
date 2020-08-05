@@ -106,6 +106,7 @@
                     </div>
 
 
+                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
 
                 </div>
 
@@ -827,6 +828,7 @@
                         </tbody>
                     </table>
 
+                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
 
                 </div>
 
@@ -864,6 +866,7 @@
                         </div>
                     </div>
 
+                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
 
 
                 </div>
@@ -901,6 +904,7 @@
                         </div>
                     </div>
 
+                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
 
 
                 </div>
@@ -940,6 +944,7 @@
                     </div>
 
 
+                    <a href="#" class="wm-banner-btn submit" tabindex="0">learn more</a>
 
 
                 </div>
