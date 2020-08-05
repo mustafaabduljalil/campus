@@ -47,13 +47,13 @@
                         </div>
                     </div>
                     <div class="wm-courses-reviewes">
-                        <div class="wm-ourcourses-left">
-                            <h6>Reviews</h6>
-                            <div class="wm-rating">
-                                <span class="rating-box" style="width:100%"></span>
-                            </div>
-                            <a href="#">{{number_format($course->rate(),1)}} Reviews</a>
-                        </div>
+{{--                        <div class="wm-ourcourses-left">--}}
+{{--                            <h6>Reviews</h6>--}}
+{{--                            <div class="wm-rating">--}}
+{{--                                <span class="rating-box" style="width:100%"></span>--}}
+{{--                            </div>--}}
+{{--                            <a href="#">{{number_format($course->rate(),1)}} Reviews</a>--}}
+{{--                        </div>--}}
                         <div class="wm-ourcourses-right">
                             <a class="wm-previous-icon" href="#"><i class="fa fa-angle-left" ></i>previous Course</a>
                             <a class="wm-Next-icon" href="#">Next Course<i class="fa fa-angle-right" ></i></a>
@@ -120,7 +120,7 @@
                                     @endif
                                 </div>
                                 <input type="hidden" name="doctor_id" value="{{$doctor->id}}">
-                                <input type="hidden" name="course_id" value="{{$course->id}}">
+{{--                                <input type="hidden" name="course_id" value="{{$course->id}}">--}}
                             </form>
                         </div>
 

@@ -107,7 +107,7 @@
                                         </li>
                                         @if(auth()->user()->role == "student")
                                             <li>
-                                                <a href="{{route('doctor.evaluation',['id' => $course->id])}}"><i class="wmicon-pen"></i>Add Rate To Doctor</a>
+                                                <a href="{{route('doctor.evaluation',['id' => $course->doctor_id])}}"><i class="wmicon-pen"></i>Add Rate To Doctor</a>
                                             </li>
                                             <li>
                                                 <a href="/course/evaluation/question/{{$course->id}}"><i class="wmicon-pen"></i>Add Rate To Course</a>

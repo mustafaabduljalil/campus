@@ -31,15 +31,14 @@ class UserController extends Controller
     public function evaluation($id){
         if(\auth()->user()->role == "doctor")
             abort(403);
-        $course = Course::find($id);
-        $doctor = User::find($course->doctor_id);
+        $doctor = User::find($id);
         $questions = DoctorEvaluationQuestion::all();
         $checkUserEvaluatedBefore = StudentEvaluationDoctor::where('student_id',\auth()->id())
-                                    ->where('doctor_id',$course->doctor_id)
-                                    ->where('course_id',$course->id)->first();
+                                    ->where('doctor_id',$id)
+                                    ->first();
         if(!is_null($checkUserEvaluatedBefore))
             $questions = [];
-        return view('dr-evaluation',compact('doctor','questions','course'));
+        return view('dr-evaluation',compact('doctor','questions'));
 
     }
 
@@ -49,7 +48,7 @@ class UserController extends Controller
             $answer = 'answers_'.$key;
             StudentEvaluationDoctor::create([
                 'doctor_id' => $request->doctor_id,
-                'course_id' => $request->course_id,
+//                'course_id' => $request->course_id,
                 'student_id' => \auth()->id(),
                 'question_id' => $question,
                 'rate' => $request->$answer,

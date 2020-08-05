@@ -81,10 +81,10 @@
                             <li class="col-md-4">
                                 <div class="wm-courses-popular-wrap">
                                     <figure>
-                                        <a href="Doctor-evaluation.html"><img src="{{$doctor->image}}" alt="">
+                                        <a href="{{route('doctor.evaluation',['id' => $doctor->id])}}"><img src="{{$doctor->image}}" alt="">
                                         </a>
                                         <figcaption>
-                                            <h6><a href="Doctor-evaluation.html">{{$doctor->name}}</a></h6>
+                                            <h6><a href="{{route('doctor.evaluation',['id' => $doctor->id])}}">{{$doctor->name}}</a></h6>
                                         </figcaption>
                                     </figure>
                                 </div>
